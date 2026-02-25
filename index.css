@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #9D89D4;
+  --color-brand-bg: #1A0F1F;
+  --color-brand-card: #162B52;
+  
+  --color-adnex-purple: #9D89D4;
+  --color-adnex-navy: #162B52;
+  --color-adnex-dark: #1A0F1F;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply antialiased overflow-x-hidden text-slate-900 dark:text-slate-100;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+}
+
+.glass-card {
+  @apply transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)];
+}
+
+.dark .glass-card {
+  background: rgba(18, 12, 22, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(157, 137, 212, 0.2);
+  box-shadow: 0 25px 70px -20px rgba(0, 0, 0, 0.8);
+}
+
+html:not(.dark) .glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(22, 43, 82, 0.1);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+}
